@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button, Form, Modal } from "react-bootstrap";
 
-
-const API_URL="https://68489b9bec44b9f349416b0e.mockapi.io/api/productos";
-
+const API_URL = "https://68489b9bec44b9f349416b0e.mockapi.io/api/productos";
 
 const CrudProductos = () => {
   const [productos, setProductos] = useState([]);
@@ -15,26 +13,26 @@ const CrudProductos = () => {
     stock: "",
     image: "",
   });
-
   const [editId, setEditId] = useState(null);
 
-//fetch -->obtener los productos
-   const getProductos = () => {
+ 
+ ///obtengo los productos.
+  const getProductos = () => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setProductos(data))
       .catch((error) => console.error("Error al obtener productos:", error));
   };
 
-//cerrar el modal 
+  // cierro el modal
   const handleClose = () => {
     setShow(false);
     setForm({ title: "", description: "", price: "", stock: "", image: "" });
     setEditId(null);
   };
 
-//abrir el modal
-const handleShow = (producto) => {
+  //Abrir modal 
+  const handleShow = (producto) => {
     setShow(true);
     if (producto) {
       setForm({
@@ -46,7 +44,7 @@ const handleShow = (producto) => {
     }
   };
 
-  //crear o editar
+  // 🔹 Crear o editar producto
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -56,12 +54,8 @@ const handleShow = (producto) => {
       stock: Number(form.stock),
     };
 
-const method = editId ? "PUT" : "POST";
-const url = editId ? `${API_URL}/${editId}` : API_URL;
-
-//https://69092b082d902d0651b2df36.mockapi.io/productos/10
-//method: "PUT"
-//"Price":1500, "Title":"campera"......
+    const method = editId ? "PUT" : "POST";
+    const url = editId ? `${API_URL}/${editId}` : API_URL;
 
     fetch(url, {
       method: method,
@@ -79,9 +73,8 @@ const url = editId ? `${API_URL}/${editId}` : API_URL;
       .catch((error) => console.error("Error:", error));
   };
 
-
-  //Eliminar:
-const eliminarProducto = (id) => {
+  // Eliminar 
+  const eliminarProducto = (id) => {
     if (!window.confirm("¿Seguro que quieres eliminar este producto?")) return;
 
     fetch(`${API_URL}/${id}`, { method: "DELETE" })
@@ -92,12 +85,11 @@ const eliminarProducto = (id) => {
       .catch((error) => console.error("Error:", error));
   };
 
-  //cargar los productos
-    useEffect(() => {
+  //productos al iniciar
+  useEffect(() => {
     getProductos();
   }, []);
 
-  
   return (
     <div className="container mt-4">
       <h2>CRUD de Productos</h2>
