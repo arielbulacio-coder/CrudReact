@@ -4,7 +4,7 @@ import 'font-awesome/css/font-awesome.min.css';
 
 const Footer = () => {
   const footerStyle = {
-    position: 'fixed',
+    // position: 'fixed',
     bottom: 0,
     left: 0,
     width: '100%',
