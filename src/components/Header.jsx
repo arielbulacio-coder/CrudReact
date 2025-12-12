@@ -18,7 +18,7 @@ const Header = () => {
             alt="Logo"
             className="d-inline-block align-top me-2"
           />
-          <span>Todo por 2 pesos - Lo mejor de Capussoto</span>
+          <span>Eco Bots Venta de Kits de Arduino, Insumos de Electrónica</span>
         </Navbar.Brand>
 
         <Nav className="ms-auto align-items-center">
