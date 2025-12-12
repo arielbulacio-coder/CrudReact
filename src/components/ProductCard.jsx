@@ -13,8 +13,7 @@ const ProductCard = ({ product, agregarAlCarrito }) => {
         className="card-img-top img-fluid"
         style={{
           height: '200px',
-          //objectFit: 'contain', // ajusta sin recortar
-          //objectFit: 'cover', 
+          objectFit: 'contain',
           objectPosition: 'center', // centra la imagen
         }}
       />
