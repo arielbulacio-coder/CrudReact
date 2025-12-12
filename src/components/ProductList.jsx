@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Row, Col ,Form,Button} from 'react-bootstrap';
+import { Row, Col, Form, Button } from 'react-bootstrap';
 import ProductCard from './ProductCard';
 import { CartContext } from './CartContext';
 
@@ -10,16 +10,16 @@ const ProductList = ({ category = null }) => {
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const { agregarAlCarrito } = useContext(CartContext);
- 
+
   useEffect(() => {
-    let url = 'https://68489b9bec44b9f349416b0e.mockapi.io/api/productos';
+    let url = 'https://693c10ecb762a4f15c3f4d4e.mockapi.io/product';
     if (category) {
       url = `https://fakestoreapi.com/products/category/${category}`;
     }
 
 
 
-  fetch(url)
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
@@ -32,7 +32,7 @@ const ProductList = ({ category = null }) => {
       });
   }, [category]);
 
- const handleFilter = () => {
+  const handleFilter = () => {
     let filtered = products;
 
     if (minPrice !== '') {
@@ -57,9 +57,9 @@ const ProductList = ({ category = null }) => {
     return <div>Loading...</div>;
   }
 
- return (
+  return (
     <>
-    
+
       <Form className="mb-4">
         <Row className="align-items-end">
           <Col md={3}>
@@ -77,7 +77,7 @@ const ProductList = ({ category = null }) => {
               type="number"
               value={maxPrice}
               onChange={(e) => setMaxPrice(e.target.value)}
-          
+
             />
           </Col>
           <Col md="auto">
@@ -93,7 +93,7 @@ const ProductList = ({ category = null }) => {
         </Row>
       </Form>
 
-   
+
 
       <Row>
         {filteredProducts.length > 0 ? (

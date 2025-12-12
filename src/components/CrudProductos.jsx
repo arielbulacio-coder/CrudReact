@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button, Form, Modal } from "react-bootstrap";
 
-const API_URL = "https://68489b9bec44b9f349416b0e.mockapi.io/api/productos";
+const API_URL = "https://693c10ecb762a4f15c3f4d4e.mockapi.io/product";
 
 const CrudProductos = () => {
   const [productos, setProductos] = useState([]);
@@ -15,8 +15,8 @@ const CrudProductos = () => {
   });
   const [editId, setEditId] = useState(null);
 
- 
- ///obtengo los productos.
+
+  ///obtengo los productos.
   const getProductos = () => {
     fetch(API_URL)
       .then((res) => res.json())
