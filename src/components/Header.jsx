@@ -24,7 +24,7 @@ const Header = () => {
         <Nav className="ms-auto align-items-center">
           <Nav.Link as={Link} to="/" className="me-3">Home</Nav.Link>
           <Nav.Link as={Link} to="/ofertas" className="me-3">Ofertas</Nav.Link>
-          <Nav.Link as={Link} to="/infaltables" className="me-3">Infaltables</Nav.Link>
+          <Nav.Link as={Link} to="/acerca" className="me-3">Acerca de</Nav.Link>
 
           <div className="d-flex align-items-center">
             <Button variant="outline-light" as={Link} to="/administracion" className="me-2">
