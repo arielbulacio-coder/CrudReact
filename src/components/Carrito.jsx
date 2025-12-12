@@ -9,6 +9,11 @@ const Carrito = () => {
     setCarrito(prev => prev.filter(producto => producto.id !== id));
   };
 
+  const handleCompra = () => {
+    alert("¡Gracias por tu compra! Tu pedido está siendo procesado.");
+    setCarrito([]);
+  };
+
   const total = carrito.reduce((acc, item) => acc + Number(item.price) * item.cantidad, 0);
 
   if (carrito.length === 0) {
@@ -53,6 +58,11 @@ const Carrito = () => {
         </tbody>
       </Table>
       <h5 className="text-end">Total a pagar: ${total.toFixed(2)}</h5>
+      <div className="text-end mt-3">
+        <Button variant="success" size="lg" onClick={handleCompra}>
+          Terminar compra
+        </Button>
+      </div>
     </Container>
   );
 };
