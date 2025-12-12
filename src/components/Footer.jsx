@@ -16,7 +16,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col md={6}>
-            <p className="mb-0">Todo por 2 pesos</p>
+            <p className="mb-0">Eco Bots Tienda de Electrónica</p>
             <p className="mb-0">Ruta 34, Km 10, Pilar Buenos Aires, Argentina</p>
           </Col>
           <Col md={6}>
