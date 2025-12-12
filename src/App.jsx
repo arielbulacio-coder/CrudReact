@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
-import Ofertas from './components/Ofertas';
+import Contacto from './components/Contacto';
 import Acerca from './components/Acerca';
 import Login from './components/Login';
 import Footer from './components/Footer'
@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/administracion" element={<Login />} />
           <Route path="/" element={<Home />} />
-          <Route path="/ofertas" element={<Ofertas />} />
+          <Route path="/contacto" element={<Contacto />} />
           <Route path="/acerca" element={<Acerca />} />
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/crud" element={<CrudProductos />} />
