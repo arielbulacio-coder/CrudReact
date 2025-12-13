@@ -16,6 +16,7 @@ const Header = () => {
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTat2v7V-gvQCAvJ3DVe-0kTIyQ6U-MXy0Oag&s"
             alt="Logo"
+            height="50"
             className="d-inline-block align-top me-2"
           />
           <span>Eco Bots Venta de Kits de Arduino, Insumos de Electrónica</span>
